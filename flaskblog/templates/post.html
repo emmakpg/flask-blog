@@ -11,7 +11,7 @@
         <h2 class="article-title">{{ post.title }}</h2>
         <p class="article-content">{{ post.content }}</p>
         {% if post.author == current_user %}
-        <a class="btn-primary btn btn-sm m-1" href="{{url_for('editpost',post_id=post.id)}}">Edit</a>
+        <a class="btn-primary btn btn-sm m-1" href="{{url_for('posts.editpost',post_id=post.id)}}">Edit</a>
         <button class="btn-danger btn btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
         {% endif %}
       </div>
@@ -28,7 +28,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <a type="button" class="btn btn-primary"  href="{{url_for('deletepost',post_id=post.id)}}">Delete</a>
+        <a type="button" class="btn btn-primary"  href="{{url_for('posts.deletepost',post_id=post.id)}}">Delete</a>
       </div>
     </div>
   </div>
